@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>元素操作器</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>元素操作器</h1>
+      <button id="config-btn" class="btn-config" title="配置流程">⚙️</button>
+    </div>
+    
+    <div class="input-section">
+      <label for="number-input">输入业务编号（用逗号、空格或换行分隔）：</label>
+      <textarea id="number-input" placeholder="例如：1,2,3 或 1 2 3"></textarea>
+      <button id="parse-btn" class="btn-primary">解析编号</button>
+    </div>
+    
+    <div id="number-list-section" class="number-list-section" style="display: none;">
+      <h3>编号列表：</h3>
+      <div id="number-list" class="number-list"></div>
+    </div>
+    
+    <div id="status" class="status"></div>
+    
+    <div id="history-section" class="history-section" style="display: none;">
+      <h3>执行历史：</h3>
+      <div id="history-list" class="history-list"></div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

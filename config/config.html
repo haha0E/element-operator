@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>流程配置</title>
+  <link rel="stylesheet" href="config.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>流程配置</h1>
+      <div class="header-actions">
+        <button id="import-btn" class="btn-secondary">导入JSON</button>
+        <button id="export-btn" class="btn-secondary">导出JSON</button>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="flowA">流程A（输入编号后）</button>
+      <button class="tab-btn" data-tab="flowB">流程B（点击编号后）</button>
+    </div>
+
+    <div id="flowA-panel" class="tab-panel active">
+      <div class="flow-header">
+        <h2>流程A配置</h2>
+        <p class="flow-desc">此流程在用户输入编号列表并解析后自动执行，用于准备、初始化等操作</p>
+      </div>
+      <div id="flowA-steps" class="steps-container"></div>
+      <button id="add-step-flowA" class="btn-add">+ 添加步骤</button>
+    </div>
+
+    <div id="flowB-panel" class="tab-panel">
+      <div class="flow-header">
+        <h2>流程B配置</h2>
+        <p class="flow-desc">此流程在用户点击编号时执行，用于具体的业务操作。可以使用 {number} 占位符表示编号</p>
+      </div>
+      <div id="flowB-steps" class="steps-container"></div>
+      <button id="add-step-flowB" class="btn-add">+ 添加步骤</button>
+    </div>
+
+    <div class="footer">
+      <button id="save-btn" class="btn-primary">保存配置</button>
+      <button id="cancel-btn" class="btn-secondary">取消</button>
+    </div>
+
+    <input type="file" id="file-input" accept=".json" style="display: none;">
+  </div>
+
+  <script src="config.js"></script>
+</body>
+</html>
